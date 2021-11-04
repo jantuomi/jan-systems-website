@@ -1,21 +1,18 @@
-FROM node:15-alpine AS deps
+FROM node:15-alpine AS builder
+
+WORKDIR /app
 
 RUN apk add --no-cache libc6-compat
-WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --only-prod
 
-FROM node:15-alpine as builder
-
-WORKDIR /app
 COPY . .
-COPY --from=deps /app/node_modules ./node_modules
 RUN npm run export
 RUN rm -r .next/cache
 
-FROM halverneus/static-file-server
+FROM halverneus/static-file-server AS server
 
-COPY ./out /web
+COPY --from=builder /app/out /web
 
 # FROM node:15-alpine as runner
 
