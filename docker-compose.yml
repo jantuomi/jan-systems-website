@@ -1,0 +1,8 @@
+services:
+  website:
+    image: registry.jan.systems/jan-systems-website:latest
+    build: .
+    volumes:
+      - ${PWD}/files:/app/static/files
+    ports:
+     - "8080:8080"

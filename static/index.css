@@ -1,0 +1,141 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main {
+  padding: 11rem 0;
+  margin: 0 auto 8rem;
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  font-family: monospace;
+  font-size: 16px;
+
+  > h1 {
+    margin: 1rem 0;
+    line-height: 1.15;
+    font-size: 4rem;
+    color: #333;
+  }
+
+  @media screen and (max-width: 450px) {
+      > h1 {
+          font-size: 13vw;
+      }
+  }
+}
+
+.boxes {
+    width: 100%;
+}
+
+.socials {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.social {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+  width: 45px;
+  height: 45px;
+
+  img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.1s;
+  }
+
+  &:hover img,
+  &:active img,
+  &:focus img {
+    transform: scale(1.1);
+  }
+}
+
+.box {
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #333;
+  background-color: #eee;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #ddd;
+  }
+
+  .arrow {
+    font-size: 24px;
+    line-height: 10px;
+    padding-bottom: 2px;
+  }
+}
+
+#files-list {
+  width: 100%;
+
+  ul {
+    text-align: left;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    display: block;
+
+    &:not(:last-of-type) a {
+      border-bottom: 1px dashed;
+    }
+
+    a {
+      display: block;
+      padding: 1rem;
+      cursor: pointer;
+
+      &:hover,
+      &:active,
+      &:focus {
+        font-weight: bold;
+      }
+    }
+  }
+}

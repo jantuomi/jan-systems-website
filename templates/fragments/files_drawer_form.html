@@ -1,0 +1,24 @@
+<form id="files-drawer-form">
+  <a
+    href="{% if not files_expanded %}/?show_files=1{% else %}/?show_files=0{% endif %}"
+    class="box"
+    id="files-btn"
+    hx-post="/click_files_drawer_toggle"
+    hx-trigger="click"
+    hx-target="#files-drawer-form"
+    hx-swap="outerHTML">
+
+    <span>Files</span>
+    <span id="files-arrow" class="arrow">{% if files_expanded %}▲{% else %}▼{% endif %}</span>
+  </a>
+  <input type="hidden" name="files_expanded" value="{{ files_expanded | tojson }}">
+
+  {% if not files_expanded %}
+  <style>
+  #files-list {
+    display: none;
+  }
+  </style>
+  {% endif %}
+</form>
+

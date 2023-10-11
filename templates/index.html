@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Jan Tuomi</title>
+  <meta name="description" content="The personal home page of Jan Tuomi" />
+  <link rel="stylesheet" href="static/index.css">
+  <script src="static/htmx.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <main>
+      <h1 class="title">Jan Tuomi</h1>
+      <div class="socials">
+        <a class="social" target="blank" rel="noopener noreferrer" href="https://t.me/kal_jan">
+          <img src="static/social/telegram.svg" alt="Telegram" />
+        </a>
+        <a class="social" target="blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/jantuomi/">
+          <img src="static/social/linkedin.svg" alt="LinkedIn" />
+        </a>
+        <a class="social" target="blank" rel="noopener noreferrer" href="http://github.com/jantuomi">
+          <img src="static/social/github.svg" alt="GitHub" />
+        </a>
+        <a class="social" target="blank" rel="noopener noreferrer" href="https://dice.camp/@kal_jan">
+          <img src="static/social/mastodon.svg" alt="Mastodon" />
+        </a>
+      </div>
+      <div class="boxes">
+        {% include 'fragments/files_drawer_form.html' %}
+      </div>
+      {% include 'fragments/files_list.html' %}
+    </main>
+  </div>
+</body>
+
+</html>
