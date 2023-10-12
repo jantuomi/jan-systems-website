@@ -1,0 +1,16 @@
+<ul>
+{% for item in listing %}
+  <li>
+  {% if item.kind == "file" %}
+    <a href="{{ item.static_path }}">📄 {{ item.name }}</a>
+  {% else %}
+    <a
+      href="/?show_files=1&dir={{ item.full_path | urlencode }}"
+      hx-post="/navigate_files/{{ item.full_path | urlencode }}"
+      hx-trigger="click"
+      hx-target="#file-browser"
+      hx-swap="outerHTML">📂 {{ item.name }}/</a>
+  {% endif %}
+  </li>
+{% endfor %}
+</ul>

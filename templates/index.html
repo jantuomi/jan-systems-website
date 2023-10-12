@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width" />
   <title>Jan Tuomi</title>
   <meta name="description" content="The personal home page of Jan Tuomi" />
+  <link rel="preload" href="static/index.css" as="style">
+  <link rel="preload" href="static/htmx.min.js" as="script">
   <link rel="stylesheet" href="static/index.css">
-  <script src="static/htmx.min.js"></script>
 </head>
 
 <body>
@@ -31,9 +32,12 @@
       <div class="boxes">
         {% include 'fragments/files_drawer_form.html' %}
       </div>
-      {% include 'fragments/files_list.html' %}
+      <div id="file-browser">
+        {% include 'fragments/file_browser.html' %}
+      </div>
     </main>
   </div>
+  <script defer src="static/htmx.min.js"></script>
 </body>
 
 </html>

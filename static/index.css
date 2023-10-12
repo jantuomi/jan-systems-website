@@ -110,16 +110,16 @@ main {
   }
 }
 
-#files-list {
+#file-browser {
   width: 100%;
 
   ul {
-    text-align: left;
-    padding: 0;
+    text-align: left !important;
+    padding: 0 !important;
+    list-style: none !important;
   }
 
   li {
-    list-style: none;
     display: block;
 
     &:not(:last-of-type) a {
